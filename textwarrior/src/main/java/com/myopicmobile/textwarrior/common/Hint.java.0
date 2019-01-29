@@ -1,0 +1,14 @@
+package com.myopicmobile.textwarrior.common;
+
+public final class Hint
+{
+    
+    public Hint(Object icon,String name,String extra){
+        this.icon=icon;
+        this.name=name;
+        this.extra=extra;
+    }
+    public Object icon;
+    public String name;
+    public String extra;
+}

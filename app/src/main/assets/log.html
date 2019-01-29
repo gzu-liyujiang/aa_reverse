@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+  
+<style type="text/css">
+      dt{
+      background-color:#000;
+      color:#fff;
+      font-size:large;
+      }
+      .type_1{
+      background-color:#fff;
+      color:#000;
+      font-style: italic
+
+      }
+      .type_2{
+      background-color:#ddd;
+      color:#000;
+      font-style: italic
+
+      }
+</style>
+<script type="text/javascript">
+      window.onload=function(){
+        update_type();
+      };
+      
+      
+      function update_type(){
+        var dl_list=document.getElementsByTagName("dl");
+        for(var i=0;i<dl_list.length;i++){
+          dd_type_set(dl_list[i].getElementsByTagName("*"));
+        }
+      }
+      
+      function dd_type_set(list){
+        var type_change=false;
+        for(var i=0;i<list.length;i++){
+          if(list[i].nodeName=="DT"){
+            type_change=true;
+            continue;
+          }
+          if(list[i].nodeName=="DD"){
+            type_change=!type_change;
+            if(type_change)
+              list[i].setAttribute("class","type_1");
+            else
+              list[i].setAttribute("class","type_2");
+          }
+        }
+      }
+</script>
+    <head>
+        <meta charset="utf-8"/>
+    </head>
+    <body>
+       <dl>
+       <dt>2017-11-24 (0.4) </dt><br>
+       <dd>优化了打开APK文件的速度</dd><br>
+       <dd>修复了未压缩条目不显示的bug</dd><br>
+       <br>
+       <dt>2017-11-25 (0.4) </dt><br>
+       <dd>添加了DEX2JAR库</dd><br>
+       <dd>JAR文件浏览</dd><br>
+       <br>
+       <dt>2017-11-26 (0.4) </dt><br>
+       <dd>修复了打开Arsc文件失败时卡死的bug</dd><br>
+       <dd>修复了ZIP文件(Apk,Jar)中的文件夹多次显示但没有名称的bug</dd><br>
+       <dd>改进了文件浏览界面</dd><br>
+       <dd>文件浏览时可显示.class文件</dd><br>
+       <dd>显示.class文件的源码</dd><br>
+       <br>
+       <dt>2017-11-27 (0.4) </dt><br>
+       <dd>[Fernflower]改进调用方式，完美支持流输入</dd><br>
+       <br>
+       <dt>2017-11-28 (0.4) </dt><br>
+       <dd>[Fernflower]支持对函数形参的解析</dd><br>
+       <br>
+       <dt>2017-11-29 (0.4) </dt><br>
+       <dd>修正了数据不可重入而导致的空指针异常</dd><br>
+       <dd>[Fernflower]取消了函数形参的解析(有bug)</dd><br>
+       <dd>增加代码高亮(有问题!)</dd><br>
+       <br>
+       <dt>2017-11-30 (0.4) </dt><br>
+       <dd>修复了代码高亮,感谢落叶似秋👍(simpleC的作者)</dd><br>
+       <dd>反编译时自动对子类进行合并</dd><br>
+       <br>
+       <dt>2017-12-01 (0.4) </dt><br>
+       <dd>优化了了ZIP文件(Apk,Jar)的打开速度</dd><br>
+       <dd>修复了XML文件无法解析出字符串的BUG</dd><br>
+       <dd>XML对齐</dd><br>
+       <br>
+       <dt>2017-12-02 (0.4) </dt><br>
+       <dd>完善了对XML的解析，可完整解析出XML</dd><br>
+       <dd>改进了ARSC解析结果的显示</dd><br>
+       <br>
+       <dt>2017-12-03 (0.4) </dt><br>
+       <dd>再次改进了ARSC解析结果的显示</dd><br>
+       <dd>新的Activity,以XML形式显示ARSC的解析结果</dd><br>
+       <br>
+       <dt>2017-12-04 (0.4) </dt><br>
+       <dd>代码浏览界面可滑动</dd><br>
+       <dd>[Fernflower]跳过对匿名类原型的保存</dd><br>
+       <br>
+       <dt>2017-12-05 (0.4) </dt><br>
+       <dt>2017-12-06 (0.4) </dt><br>
+       <dd>[Fernflower]完成对函数中的匿名类的反编译</dd><br>
+       <dd>[Fernflower]完成对函数中的匿名类中的函数的反编译</dd><br>
+       <dd>点击APK文件中resources.arsc条目，弹出选择栏</dd><br>
+       <dd>设置中增加日志选项</dd><br>
+       <br>
+       <dt>2017-12-07 (0.4) </dt><br>
+       <dd>修复arsc转xml经常崩溃的bug</dd><br>
+       <dd>将DEX2JAR库从核心部分分离，转换为外部DEX引用(未来将移除它，直接支持dex转java)</dd><br>
+       <br>
+       <dt>2017-12-08 (0.4) </dt><br>
+       <dt>2017-12-09 (0.4) </dt><br>
+       <dd>完善反编译功能</dd><br>
+       <br>
+       <dt>2017-12-10 (0.4) </dt><br>
+       <dd>[Fernflower]完成对函数中的匿名类中的成员的反编译</dd><br>
+       <dd>[Fernflower]修正函数中的匿名类中的函数的权限描述缺失的bug</dd><br>
+       <dd>[Fernflower]修正匿名类中的接口类的实现的类型错误的bug</dd><br>
+       <br>
+       <dt>2017-12-11 (0.4) </dt><br>
+       <dd>[Fernflower]完成对函数中的匿名类调用函数中的常量的解析</dd><br>
+       <br>
+       <dt>2017-12-12 (0.4) </dt><br>
+       <dd>同步至Apktool中最新ARSC和XML解码器(我也不知道更新了啥)</dd><br>
+       <br>
+       <dt>2017-12-13 (0.4) </dt><br>
+       <dd>修正XML对齐</dd><br>
+       <dd>代码整理</dd><br>
+       <br>
+       <dt>2017-12-14 (0.4) </dt><br>
+       <dd>[Fernflower]对导入的包进行排序</dd><br>
+       <br>
+       <dt>2017-12-15 (0.4) </dt><br>
+       <dd>添加dex文件内的类列表显示</dd><br>
+       <br>
+       <dt>2017-12-16 (0.4) </dt><br>
+       <dt>2017-12-17 (0.4) </dt><br>
+       <dd>[Fernflower]修复一处空指针异常</dd><br>
+       <dd>[Fernflower]增加字面量的表示方法，默认16进制(小写)</dd><br>
+       <br>
+       <dt>2017-12-18 (0.4) </dt><br>
+       <dd>[Fernflower]修复函数形参的解析</dd><br>
+       <dd>[Fernflower]改进局部变量的命名方式(可选，驼峰命名法或下划线命名法)</dd><br>
+       <br>
+       <dt>2017-12-19 (0.4) </dt><br>
+       <dd>放弃Fernflower并移除(Dax2jar无法正常将.dex转换为.class!)，采用Jadx</dd><br>
+       <dd>移除Lightweight-Stream-API相关代码</dd><br>
+       <br>
+       <dt>2017-12-20 (0.4) </dt><br>
+       <dd>[Jadx]移除res相关代码</dd><br>
+       <dd>[Jadx]移除clsp相关代码</dd><br>
+       <dd>[Jadx]改进结果输出</dd><br>  
+       <br>
+       <dt>2017-12-21 (0.4) </dt><br>
+       <dd>[Jadx]改进输入，以字节数组的形式</dd><br>  
+       <br>
+       <dt>2017-12-22 (0.4) </dt><br>
+       <dd>取消文件浏览时显示.class文件，增加文件浏览时显示.dex文件,.xml文件,.arsc文件</dd><br>  
+       <dd>点击dex中的类列表中的类可显示源代码</dd><br> 
+       <dd>更新"关于"</dd><br>  
+       <br>
+       <dt>2017-12-23 (0.4) </dt><br>
+       <dt>2017-12-24 (0.4) </dt><br>
+       <dd>[Jadx]移除泛型实现的多余的解析</dd><br>  
+       <dd>[Jadx]修正对匿名类的形参的解析</dd><br>  
+       <dd>[Jadx]修正对匿名类的成员的解析</dd><br>  
+       <dd>[Jadx]移除匿名类中的静态函数的解析</dd><br>  
+       <dd>[Jadx]移除匿名类中的构造器的解析</dd><br>  
+       <br>
+       <dt>2017-12-25 (0.4) </dt><br>
+       <dt>2017-12-26 (0.4) </dt><br>
+       <dd>更新dx库至最新(不知道更新了啥)</dd><br>   
+       <dd>更新Apktool至最新(貌似修正了arsc的解析??)</dd><br>      
+       <br>
+       <dt>2017-12-27 (0.4) </dt><br>
+       <dd>风格修改</dd><br>   
+       <dd>增加选项"整型适配"</dd><br> 
+       <dd>增加选项"缩进"</dd><br>
+       <br>
+       <dt>2017-12-28 (0.4) </dt><br>
+       <dd>[Jadx]修复了一处指令异常</dd><br>  
+       <br>
+       <dt>2017-12-29 (0.4) </dt><br>
+       <dd>增加选项"UNICODE转义"</dd><br> 
+       <br>
+       <dt>2018-01-03 (0.4) </dt><br>
+       <dd>[Jadx]增加局部变量风格选项</dd><br>  
+       <dd>[Jadx]修复匿名类引用外部实例的bug</dd><br> 
+       <dd>增加局部变量风格选项</dd><br> 
+       <br>
+       <dt>2018-01-06 (0.4) </dt><br>
+       <dd>[Jadx]修复匿名类引用外部常量的bug</dd><br>  
+       <dd>[Jadx]修复内部类引用外部实例的bug</dd><br> 
+       <dd>[Jadx]修复内部类的形参，并移除多余的语句</dd><br> 
+       <dd>集成Fernflower(以后会用到)</dd><br> 
+       <br>
+       <dt>2018-01-07 (0.4) </dt><br>
+       <dd>[Jadx]加入对继承至系统类并重载的方法的形参的解析(需要将android.jar文件放至/sdcard/.aide目录下)</dd><br>  
+       <dd>[Jadx]再次修复内部类和匿名类引用外部实例的bug</dd><br>
+       <br>
+       <dt>2018-01-08 (0.4) </dt><br>
+       <dd>[Jadx]赋值时自动进行强制类型转换</dd><br>  
+       <dd>[Fernflower]将long类型的适配合并至int类型的适配</dd><br>
+       <br>
+       <dt>2018-01-09 (0.4) </dt><br>
+       <dd>[Jadx]加入对实现系统接口并重载的方法的形参的解析</dd><br>  
+       <dd>[Jadx]修正局部变量为new一个匿名类时，变量类型错误的bug</dd><br>  
+       <dd>恢复对.class文件的反编译的支持(Fernflower)</dd><br> 
+       <dd>反编译以安装的apk时采用包名作为输出目录</dd><br> 
+       <dd>取消反编译时单独开一个线程</dd><br> 
+       <br>
+       <dt>2018-01-10 (0.4) </dt><br>
+       <dd>[Jadx]深度解析对重载系统继承函数的形参(例如继承了ListActivity，则可以解析出父类Activity,ContextThemeWrapper,ContextWrapper...中方法的形参)</dd><br>  
+       <dd>[Jadx]修正局部变量为new一个匿名类时，变量类型错误的bug(昨天好像修错了😭)</dd><br>  
+       <dd>[Jadx]修正局部变量为new一个匿名类时，变量名称为数字的bug(改为了__😒)</dd><br>  
+       <dd>[Jadx]修正在在不同的构造器中为类成员赋值为一个相同的匿名类时，提示/* anonymous class already generated */的bug(虽然已经修复，但是有瑕疵!)</dd><br>  
+       <dd>日志界面风格修改</dd><br> 
+       <br>
+       <dt>2018-01-11 (0.4) </dt><br>
+       <dd>[Jadx]函数连续调用时强制类型转换</dd><br>  
+       <dd>[Jadx]深度解析对重载系统继承函数的形参(深度分析自己的类中的继承关系)</dd><br>  
+       <br>
+       <dt>2018-01-13 (0.4) </dt><br>
+       <dd>[Jadx]修正部分指令解析错误的bug</dd><br>  
+       <br>
+       <dt>2018-01-14 (0.4) </dt><br>
+       <dd>[Jadx]再次完善函数连续调用时强制类型转换</dd><br>  
+       <br>
+       <dt>2018-01-20 (0.4) </dt><br>
+       <dd>[Jadx]全部进行强制类型，解决类型问题</dd><br>  
+       <br>
+       <dt>2018-02-03 (0.4) </dt><br>
+       <dt>2018-02-04 (0.4) </dt><br>
+       <dd>[Jadx]继续修正部分指令解析错误的bug</dd><br>  
+       <dd>重写反编译部分，用于支持并发(已实现)和并行(未实现)</dd><br> 
+       <dd>增加并发和并行选项</dd><br> 
+       <br>
+       <dt>2018-02-08 (0.4) </dt><br>
+       <dd>完成并行(麻烦死了，一堆bug。。)?)</dd><br> 
+       <br>
+       <dt>2018-02-11 (0.5) </dt><br>
+       <dd>加入framework路径选项</dd><br> 
+       <dd>加入sdk路径选项</dd><br> 
+       <dd>加入输出路径选项</dd><br> 
+       <dd>加入捐赠选项</dd><br> 
+       <dd>开源...</dd><br> 
+       <br>
+       <dt>2018-12-05 (0.6) </dt><br>
+       <dd>移除反编译功能，以及相关选项</dd><br> 
+       <dd>可以指定jar包目录，用于方法形参修复</dd><br> 
+       <br>
+       <dt>2018-12-10 (0.6) </dt><br>
+       <dd>修复ANR的问题</dd><br> 
+       <br>
+         <dt>2018-12-10 (0.7) </dt><br>
+       <dd>自带framework.jar，解决因系统版本问题导致的xml反编译效果不全</dd><br> 
+       <br>
+       </dl>
+    </body>
+</html>		

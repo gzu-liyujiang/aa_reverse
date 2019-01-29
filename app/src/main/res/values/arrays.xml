@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+    
+<resources>
+    <string-array name="ui_theme_entryValues">
+        <item>dark</item>
+        <item>light</item>
+    </string-array>
+    
+    <string-array name="decompile_int_format_entryValues">
+        <item>%d</item>
+        <item>0x%x</item>
+        <item>0x%X</item>
+    </string-array>
+    
+    <string-array name="decompile_local_var_style_entryValues">
+        <item>snake</item>
+        <item>hump</item>
+        <item>hump_large</item>
+        <item>abbreviate</item>
+        <item>abbreviate_large</item>
+        <item>first_cut</item>
+        <item>last_cut</item>
+        <item>hungary</item>
+        <item>hungary_snake</item>
+    </string-array>
+    
+    <string-array name="apk_options">
+        <item>decompile</item>
+        <item>browse</item>
+        <item>signature</item>
+    </string-array>
+    
+    <string-array name="arsc_decoder_select">
+        <item>arsc_preview</item>
+        <item>arsc_to_xml</item>
+    </string-array>
+    
+    <string-array name="decompile_concurrence_count_entryValues">
+        <item>auto</item>
+        <item>2</item>
+        <item>4</item>
+        <item>8</item>
+    </string-array>
+    
+</resources>

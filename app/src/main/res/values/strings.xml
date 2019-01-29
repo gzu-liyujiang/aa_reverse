@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AA逆向助手</string>
+    <string name="select_file">选择文件</string>
+    <string name="select_app">选择应用</string>
+    <string name="signatureing">签名中..</string>
+    <string name="open_file_err">打开%s文件时发生错误</string>
+    <string name="open_failed">打开失败</string>
+    <string name="loading">载入中..</string>
+    <string name="hide">隐藏</string>
+    <string name="dex_to_jar_err">转换为JAR时发生了错误...</string>
+    <string name="dex_to_jar_ing">DEX TO JAR...</string>
+    <string name="decompile_X_ing">反编译%s中..</string>
+    <string name="decompile_done">反编译完成</string>
+    <string name="decompile_fail">反编译失败</string>
+    <string name="save_to_X_dir">保存在%s目录下</string>
+    <string name="save_resourceing">保存资源中...</string>
+    
+    <string-array name="ui_theme_entries">
+        <item>默认</item>
+        <item>明亮</item>
+    </string-array>
+    
+    <string-array name="apk_options_name">
+        <item>反编译</item>
+        <item>浏览</item>
+        <item>签名</item>
+    </string-array>
+    
+
+    <string-array name="arsc_decoder_select_name">
+        <item>ARSC预览</item>
+        <item>以XML形式打开</item>
+    </string-array>
+    
+    <string-array name="decompile_int_format_entries">
+        <item>十进制</item>
+        <item>十六进制(小写)</item>
+        <item>十六进制(大写)</item>
+    </string-array>
+    
+    <string-array name="decompile_local_var_style_entries">
+        <item>蛇形(下划线)</item>
+        <item>驼峰</item>
+        <item>大驼峰</item>
+        <item>缩写</item>
+        <item>缩写(大写)</item>
+        <item>前截断</item>
+        <item>后截断</item>
+        <item>匈牙利命名法</item>
+        <item>匈牙利命名法(蛇形)</item>
+    </string-array>
+    
+    <string-array name="decompile_concurrence_count_entries">
+        <item>自动</item>
+        <item>2</item>
+        <item>4</item>
+        <item>8</item>
+    </string-array>
+    
+</resources>

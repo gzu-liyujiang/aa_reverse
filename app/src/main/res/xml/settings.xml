@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+    
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aenu_pref="http://schemas.android.com/apk/aenu.preference"
+    android:title="设置" >
+
+    <PreferenceScreen android:title="界面">
+        <ListPreference 
+            android:key="ui_theme"
+            android:title="主题"
+            android:entries="@array/ui_theme_entries"
+            android:entryValues="@array/ui_theme_entryValues"
+            android:defaultValue="dark"/>
+    </PreferenceScreen>
+    
+    <PreferenceScreen android:title="反编译">
+        <PreferenceCategory android:title="代码"/>
+        <ListPreference 
+            android:key="decompile_int_format"
+            android:title="整型适配"
+            android:entries="@array/decompile_int_format_entries"
+            android:entryValues="@array/decompile_int_format_entryValues"
+            android:defaultValue="%d"/>
+        <aenu.preference.SeekBarPreference 
+            android:key="decompile_indent_count"      
+            android:title="缩进"
+            aenu_pref:minValue="1"
+            aenu_pref:maxValue="12"
+            android:defaultValue="4"/>
+        <CheckBoxPreference   
+            android:key="decompile_escape_unicode"
+            android:title="转义unicode"
+            android:summary="以\\uxxxx的形式表示字符，防止出现乱码"
+            android:defaultValue="false"/>
+        <ListPreference 
+            android:key="decompile_local_var_style"
+            android:title="局部变量风格"
+            android:entries="@array/decompile_local_var_style_entries"
+            android:entryValues="@array/decompile_local_var_style_entryValues"
+            android:defaultValue="snake"/>
+        
+        <PreferenceCategory android:title="路径"/>
+        <EditTextPreference
+            android:title="框架包路径(反编译XML时需要)"
+            android:key="decompile_framework_path"
+            android:dialogTitle="指定framework-res.apk的完整路径"
+            android:defaultValue="/sdcard/.aa_reverse/framework-28.jar"/>
+        
+        <EditTextPreference
+            android:title="库路径(修复Java方法的形参)"
+            android:key="decompile_libs_path"
+            android:dialogTitle="指定库目录"
+            android:defaultValue="/sdcard/aa_reverse/libs"/>
+       
+    </PreferenceScreen>
+    
+    <Preference
+        android:title="github"
+        android:summary="本应用的开源地址">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://github.com/aenu/aa_reverse"/>
+    </Preference>
+    <aenu.preference.WebViewPreference 
+        android:title="关于"
+        aenu_pref:url="file:///android_asset/about.html">
+    </aenu.preference.WebViewPreference>
+    
+    <aenu.preference.WebViewPreference 
+        android:title="日志"
+        aenu_pref:url="file:///android_asset/log.html">
+    </aenu.preference.WebViewPreference>
+    
+</PreferenceScreen>

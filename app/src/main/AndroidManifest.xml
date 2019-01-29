@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="aenu.reverse.ui">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application 
+        android:label="@string/app_name"
+        android:icon="@drawable/ic_menu_app"
+        android:name="Application"
+        android:debuggable="false">
+
+        <activity 
+            android:launchMode="singleTask" 
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+            android:name="MainActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:launchMode="singleTask" 
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+            android:name="ApkInBrowseActivity">         
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="file" />
+                <data android:mimeType="application/vnd.android.package-archive" />
+            </intent-filter>
+        </activity>
+
+        <activity 
+            android:name="SettingsActivity" />
+
+        <activity
+            android:name="ArscEditorActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+            android:launchMode="singleTask"  />
+
+        <activity 
+            android:name="XmlEditorActivity" 
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+            android:windowSoftInputMode="adjustResize"
+            android:launchMode="singleTask"   />
+
+        <activity 
+            android:name="ElfEditorActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+            android:launchMode="singleTask" />
+
+        <activity
+            android:name="JarInBrowseActivity" 
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+            android:launchMode="singleTask"  />
+
+        <activity
+            android:name="CTJ_EditorActivity" 
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+            android:launchMode="singleTask"  />
+
+        <activity
+            android:name="ArscToXmlEditorActivity" 
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+            android:launchMode="singleTask"  />
+
+        <activity
+            android:name="DexEditorActivity" 
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+            android:launchMode="singleTask"  />
+
+    </application>
+
+</manifest> 

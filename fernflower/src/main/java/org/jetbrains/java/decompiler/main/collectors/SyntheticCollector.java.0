@@ -1,0 +1,44 @@
+package org.jetbrains.java.decompiler.main.collectors;
+import java.util.Map;
+import java.util.List;
+import org.jetbrains.java.decompiler.struct.StructField;
+import java.util.HashMap;
+import org.jetbrains.java.decompiler.struct.StructClass;
+import org.jetbrains.java.decompiler.struct.StructMethod;
+import java.util.ArrayList;
+
+public class SyntheticCollector{
+    private Map<StructClass,List<StructField>> syntheticFields=new HashMap<>();
+    private Map<StructClass,List<StructMethod>> syntheticMethods=new HashMap<>();
+    
+    public void addSyntheticField(StructClass cls,StructField field){
+        List<StructField> fields=syntheticFields.get(cls);
+        if(fields==null){
+            fields=new ArrayList<>();
+            syntheticFields.put(cls,fields);
+        }
+        
+        if(!fields.contains(field))
+            fields.add(field);
+    }
+    
+    public void addSyntheticMethod(StructClass cls,StructMethod method){
+        List<StructMethod> methods=syntheticMethods.get(cls);
+        if(methods==null){
+            methods=new ArrayList<>();
+            syntheticMethods.put(cls,methods);
+        }
+
+        if(!methods.contains(method))
+            methods.add(method);
+    }
+    
+    public StructField getSyntheticField(StructClass cls,String name){
+        List<StructField> fields=syntheticFields.get(cls);
+        if(fields!=null)
+            for(StructField field:fields)
+                if(field.getName().equals(name))
+                    return field;
+        return null;
+    }
+}
